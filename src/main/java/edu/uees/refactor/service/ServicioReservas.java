@@ -34,7 +34,7 @@ public class ServicioReservas {
             return 0;
         }
 
-        double total = calcularTotal(r);
+        double total = r.calcularTotal();
 
         System.out.println(
                 "Guardando reserva " + r.getId()
@@ -45,16 +45,6 @@ public class ServicioReservas {
         );
 
         r.confirmar();
-
-        return total;
-    }
-
-    private double calcularTotal(Reserva r) {
-        double total = 40;
-
-        if ("VIP".equals(r.getTipo())) {
-            total = total * 0.85;
-        }
 
         return total;
     }

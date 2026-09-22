@@ -29,6 +29,20 @@ public class Reserva {
         estado = EstadoReserva.CONFIRMADA;
     }
 
+    /**
+     * Calcula el valor de la reserva según su tipo.
+     * La regla depende exclusivamente de los datos propios de Reserva.
+     */
+    public double calcularTotal() {
+        double total = 40.0;
+
+        if ("VIP".equals(tipo)) {
+            total = total * 0.85;
+        }
+
+        return total;
+    }
+
     public String getId() {
         return id;
     }
